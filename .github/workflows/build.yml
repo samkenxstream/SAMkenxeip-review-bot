@@ -12,10 +12,10 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # v3.0.2
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
       
       - name: Setup
-        uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # v3.4.1
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
         with:
           node-version: 16
       
@@ -26,7 +26,7 @@ jobs:
         run: npm run build
 
       - name: Commit & Push changes
-        uses: actions-js/push@5f565701a8b9f9aa6b7efc25f28994eabfcf5312
+        uses: actions-js/push@156f2b10c3aa000c44dbe75ea7018f32ae999772
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           message: Update dist/index.js; ${{ github.event.head_commit.message }}
